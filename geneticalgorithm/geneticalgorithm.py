@@ -372,8 +372,8 @@ class geneticalgorithm():
                 pop[k]=par[k].copy()
                 
             for k in range(self.par_s, self.pop_s, 2):
-                r1=np.random.int(0, par_count)
-                r2=np.random.int(0, par_count)
+                r1=np.random.randint(0, par_count)
+                r2=np.random.randint(0, par_count)
                 pvar1=ef_par[r1,: self.dim].copy()
                 pvar2=ef_par[r2,: self.dim].copy()
                 
@@ -473,9 +473,8 @@ class geneticalgorithm():
         for i in self.integers[0]:
             ran=np.random.random()
             if ran < self.prob_mut:
-                
-                x[i]=np.random.randint(self.var_bound[i][0],\
-                 self.var_bound[i][1]+1) 
+                s = [-1, 1]
+                x[i]=np.random.choice(s) 
                     
         
 
@@ -493,12 +492,14 @@ class geneticalgorithm():
             ran=np.random.random()
             if ran < self.prob_mut:
                 if p1[i]<p2[i]:
-                    x[i]=np.random.randint(p1[i],p2[i])
+                    s = [-1, 1]
+                    x[i]=np.random.choice(s)
                 elif p1[i]>p2[i]:
-                    x[i]=np.random.randint(p2[i],p1[i])
+                    s = [-1, 1]
+                    x[i]=np.random.choice(s)
                 else:
-                    x[i]=np.random.randint(self.var_bound[i][0],\
-                 self.var_bound[i][1]+1)
+                    s = [-1, 1]
+                    x[i]=np.random.choice(s)
                         
         for i in self.reals[0]:                
             ran=np.random.random()
