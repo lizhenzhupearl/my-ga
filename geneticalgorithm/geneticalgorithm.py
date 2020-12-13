@@ -372,8 +372,9 @@ class geneticalgorithm():
                 pop[k]=par[k].copy()
                 
             for k in range(self.par_s, self.pop_s, 2):
-                r1=np.random.randint(0,par_count)
-                r2=np.random.randint(0,par_count)
+                s = [-1, par_count]
+                r1=np.random.choice(s)
+                r2=np.random.choice(s)
                 pvar1=ef_par[r1,: self.dim].copy()
                 pvar2=ef_par[r2,: self.dim].copy()
                 
