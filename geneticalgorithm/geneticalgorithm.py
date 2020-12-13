@@ -275,7 +275,7 @@ class geneticalgorithm():
             for i in self.integers[0]:
                #var[i]=np.random.randint(self.var_bound[i][0],\
                         #self.var_bound[i][1]+1)
-		        var[i]=np.random.randint(-1, 1)  
+		var[i]=np.random.randint(-1, 1)  
                 solo[i]=var[i].copy()
             for i in self.reals[0]:
                 var[i]=self.var_bound[i][0]+np.random.random()*\
