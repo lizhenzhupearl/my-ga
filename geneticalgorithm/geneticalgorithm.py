@@ -324,7 +324,7 @@ class geneticalgorithm():
             ##############################################################         
             # Normalizing objective function 
             
-            normobj=np.zeros(self.pop_s)
+            normobj=np.ones(self.pop_s)
             
             minobj=pop[0,self.dim]
             if minobj<0:
@@ -340,13 +340,13 @@ class geneticalgorithm():
             # Calculate probability
             
             sum_normobj=np.sum(normobj)
-            prob=np.zeros(self.pop_s)
+            prob=np.ones(self.pop_s)
             prob=normobj/sum_normobj
             cumprob=np.cumsum(prob)
   
             #############################################################        
             # Select parents
-            par=np.array([np.zeros(self.dim+1)]*self.par_s)
+            par=np.array([np.ones(self.dim+1)]*self.par_s)
             
             for k in range(0,self.num_elit):
                 par[k]=pop[k].copy()
