@@ -266,9 +266,9 @@ class geneticalgorithm():
         
         
         
-        pop=np.array([np.zeros(self.dim+1)]*self.pop_s)
-        solo=np.zeros(self.dim+1)
-        var=np.zeros(self.dim)       
+        pop=np.array([np.ones(self.dim+1)]*self.pop_s)
+        solo=np.ones(self.dim+1)
+        var=np.ones(self.dim)       
         
         for p in range(0,self.pop_s):
          
@@ -366,7 +366,7 @@ class geneticalgorithm():
     
             #############################################################  
             #New generation
-            pop=np.array([np.zeros(self.dim+1)]*self.pop_s)
+            pop=np.array([np.ones(self.dim+1)]*self.pop_s)
             
             for k in range(0,self.par_s):
                 pop[k]=par[k].copy()
