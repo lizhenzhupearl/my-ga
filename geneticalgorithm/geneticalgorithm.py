@@ -429,6 +429,7 @@ class geneticalgorithm():
         plt.plot(re)
         plt.xlabel('Iteration')
         plt.ylabel('Objective function')
+        plt.ylim(self.best_function-1, self.best_function+1)
         plt.title('Genetic Algorithm')
         plt.show()
         if self.stop_mniwi==True:
