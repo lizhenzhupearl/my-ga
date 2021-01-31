@@ -327,6 +327,7 @@ class geneticalgorithm():
             normobj=np.ones(self.pop_s)
             
             minobj=pop[0,self.dim]
+            print(minobj)
             if minobj<0:
                 normobj=pop[:,self.dim]+abs(minobj)
                 
@@ -335,7 +336,6 @@ class geneticalgorithm():
     
             maxnorm=np.amax(normobj)
             normobj=maxnorm-normobj+1
-            print(normobj)
 
             #############################################################        
             # Calculate probability
@@ -344,6 +344,7 @@ class geneticalgorithm():
             prob=np.ones(self.pop_s)
             prob=normobj/sum_normobj
             cumprob=np.cumsum(prob)
+            print(cumprob)
   
             #############################################################        
             # Select parents
