@@ -335,6 +335,7 @@ class geneticalgorithm():
     
             maxnorm=np.amax(normobj)
             normobj=maxnorm-normobj+1
+            print(normobj)
 
             #############################################################        
             # Calculate probability
@@ -350,7 +351,7 @@ class geneticalgorithm():
             
             for k in range(0,self.num_elit):
                 par[k]=pop[k].copy()
-                print(par[k])
+                
             for k in range(self.num_elit,self.par_s):
                 index=np.searchsorted(cumprob,np.random.random())
                 par[k]=pop[index].copy()
